@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5">
+    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5" enctype="multipart/form-data">
         @method('put')
         @csrf
         <div class="mb-3">
@@ -39,6 +39,9 @@
             @endforeach
           </select>
         </div>
+
+        
+
         <div class="mb-3">
           <label for="body" class="form-label">Body</label>
           @error('body')
